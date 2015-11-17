@@ -13,12 +13,9 @@ from zope.interface import implements
 
 from Products.Zuul.infos import ProxyProperty
 from Products.Zuul.infos.component import ComponentInfo
-from Products.Zuul.infos.device import DeviceInfo
 
 from ZenPacks.community.LogMatch.LogMatch import LogMatch
-from ZenPacks.community.LogMatch.LogMatchDevice import LogMatchDevice
 from ZenPacks.community.LogMatch.interfaces import ILogMatchInfo
-from ZenPacks.community.LogMatch.interfaces import ILogMatchDeviceInfo
 
 class LogMatchInfo(ComponentInfo):
     implements(ILogMatchInfo)
@@ -32,9 +29,3 @@ class LogMatchInfo(ComponentInfo):
     logMatchRegExCompilation = ProxyProperty("logMatchRegExCompilation")
     snmpindexblah  = ProxyProperty("snmpindex")
 
-class LogMatchDeviceInfo(DeviceInfo):
-    implements(ILogMatchDeviceInfo)
-    adapts(LogMatchDevice)
-
-    versionTag = ProxyProperty("versionTag")
-    versionDate = ProxyProperty("versionDate")

@@ -12,10 +12,5 @@
          provides=".interfaces.ILogMatchInfo"
          />
 
-    <adapter factory=".info.LogMatchDeviceInfo"
-         for=".LogMatchDevice.LogMatchDevice"
-         provides=".interfaces.ILogMatchDeviceInfo"
-         />
-
 </configure>
 

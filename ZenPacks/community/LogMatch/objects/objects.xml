@@ -3706,7 +3706,7 @@ node
 </object>
 <object id='versionCDate' module='Products.ZenModel.MibNode' class='MibNode'>
 <property id='zendoc' type='string'>
-Date string from ctime() 
+Date string from ctime()
 </property>
 <property type="string" id="moduleName" mode="w" >
 UCD-SNMP-MIB

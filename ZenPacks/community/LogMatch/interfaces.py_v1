@@ -1,6 +1,5 @@
 from Products.Zuul.form import schema
 from Products.Zuul.interfaces.component import IComponentInfo
-from Products.Zuul.interfaces.device import IDeviceInfo
 
 # ZuulMessageFactory is the translation layer. You will see strings intended to
 # been seen in the web interface wrapped in _t(). This is so that these strings
@@ -33,8 +32,3 @@ class ILogMatchInfo(IComponentInfo):
     logMatchErrorFlag = schema.Int(title=_t(u"LogMatch ErrorFlag"))
     logMatchRegExCompilation = SingleLineText(title=_t(u"LogMatch RegExCompilation"))
     snmpindexblah = SingleLineText(title=_t(u"SNMP Index for datasource"))
-
-class ILogMatchDeviceInfo(IDeviceInfo):
-    versionTag = SingleLineText(title=_t(u"Version Tag"))
-    versionDate = SingleLineText(title=_t(u"Version Date"))
-

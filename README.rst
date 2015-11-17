@@ -67,8 +67,8 @@ MIBs
 GUI modifications
 -----------------
 
-* The Overview display for a device in the /Server/Linux/Blah class has been extended in the
-  middle-upper panel to include ......
+* The Overview display for a device of object class LogMatchDevice has the SNMP panel
+  modified to remove the SNMP community name and to add versionTag and versionDate.
 
 Usage
 =====
@@ -127,6 +127,9 @@ Change History
 ==============
 * 1.0.0
    - Initial Release
+* 1.0.1
+   - Modified Overview display for LogMatchDevice devices to remove SNMP community and to add 
+     versionTag and versionDate to the SNMP panel.
 
 Screenshots
 ===========
@@ -136,7 +139,7 @@ See the screenshots directory.
 
 .. External References Below. Nothing Below This Line Should Be Rendered
 
-.. _Latest Package for Python 2.7: https://github.com/ZenossDevGuide/ZenPacks.community.LogMatch/blob/master/dist/ZenPacks.community.LogMatch-1.0.0-py2.7.egg?raw=true
+.. _Latest Package for Python 2.7: https://github.com/ZenossDevGuide/ZenPacks.community.LogMatch/blob/master/dist/ZenPacks.community.LogMatch-1.0.1-py2.7.egg?raw=true
 
 Acknowledgements
 ================
