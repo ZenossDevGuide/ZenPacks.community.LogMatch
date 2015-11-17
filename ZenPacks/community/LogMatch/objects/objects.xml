@@ -1,0 +1,4023 @@
+<?xml version="1.0"?>
+<objects>
+<!-- ('', 'zport', 'dmd', 'Devices', 'Server', 'Linux', 'rrdTemplates', 'LogMatch') -->
+<object id='/zport/dmd/Devices/Server/Linux/rrdTemplates/LogMatch' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
+<property type="string" id="targetPythonClass" mode="w" >
+Products.ZenModel.Device
+</property>
+<tomanycont id='datasources'>
+<object id='logMatchCurrentCounter' module='Products.ZenModel.BasicDataSource' class='BasicDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+SNMP
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="string" id="eventClass" mode="w" >
+/Cmd/Fail
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.16.2.1.7
+</property>
+<property type="boolean" id="usessh" mode="w" >
+False
+</property>
+<property type="string" id="parser" mode="w" >
+Auto
+</property>
+<tomanycont id='datapoints'>
+<object id='logMatchCurrentCounter' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+<tomanycont id='graphDefs'>
+<object id='Log Match Current Counter' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+matches
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
+<tomanycont id='graphPoints'>
+<object id='logMatchCurrentCounter' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+logMatchCurrentCounter_logMatchCurrentCounter
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+</object>
+<!-- ('', 'zport', 'dmd', 'Mibs', 'mibs', 'UCD-SNMP-MIB') -->
+<object id='/zport/dmd/Mibs/mibs/UCD-SNMP-MIB' module='Products.ZenModel.MibModule' class='MibModule'>
+<property id='zendoc' type='string'>
+Clarify behaviour of objects in the memory &amp; systemStats groups
+(including updated versions of malnamed mem*Text objects).
+Define suitable TCs to describe error reporting/fix behaviour.
+</property>
+<property type="string" id="language" mode="w" >
+SMIv2
+</property>
+<property type="string" id="contact" mode="w" >
+This mib is no longer being maintained by the University of
+California and is now in life-support-mode and being
+maintained by the net-snmp project.  The best place to write
+for public questions about the net-snmp-coders mailing list
+at net-snmp-coders@lists.sourceforge.net.
+
+postal:   Wes Hardaker
+         P.O. Box 382
+         Davis CA  95617
+
+email:    net-snmp-coders@lists.sourceforge.net
+</property>
+<property type="string" id="description" mode="w" >
+Clarify behaviour of objects in the memory &amp; systemStats groups
+(including updated versions of malnamed mem*Text objects).
+Define suitable TCs to describe error reporting/fix behaviour.
+</property>
+<tomanycont id='nodes'>
+<object id='bsdi' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.250.11
+</property>
+</object>
+<object id='dskAvail' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Available space on the disk
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.9.1.7
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Available space on the disk
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='dskAvailHigh' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Available space on the disk (kBytes).
+Together with dskAvailLow composes 64-bit number.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.9.1.14
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Available space on the disk (kBytes).
+Together with dskAvailLow composes 64-bit number.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='dskAvailLow' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Available space on the disk (kBytes).
+Together with dskAvailHigh composes 64-bit number.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.9.1.13
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Available space on the disk (kBytes).
+Together with dskAvailHigh composes 64-bit number.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='dskDevice' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Path of the device for the partition
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.9.1.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Path of the device for the partition
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='dskEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+An entry containing a disk and its statistics.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+row
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.9.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+An entry containing a disk and its statistics.
+</property>
+</object>
+<object id='dskErrorFlag' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Error flag signaling that the disk or partition is under
+the minimum required space configured for it.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.9.1.100
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Error flag signaling that the disk or partition is under
+the minimum required space configured for it.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='dskErrorMsg' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A text description providing a warning and the space left
+on the disk.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.9.1.101
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A text description providing a warning and the space left
+on the disk.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='dskIndex' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Integer reference number (row number) for the disk mib.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.9.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Integer reference number (row number) for the disk mib.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='dskMinPercent' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Percentage of minimum space required on the disk before the
+errors are triggered.  Either this or dskMinimum is
+configured via the agent's snmpd.conf file.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.9.1.5
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Percentage of minimum space required on the disk before the
+errors are triggered.  Either this or dskMinimum is
+configured via the agent's snmpd.conf file.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='dskMinimum' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Minimum space required on the disk (in kBytes) before the
+errors are triggered.  Either this or dskMinPercent is
+configured via the agent's snmpd.conf file.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.9.1.4
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Minimum space required on the disk (in kBytes) before the
+errors are triggered.  Either this or dskMinPercent is
+configured via the agent's snmpd.conf file.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='dskPath' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Path where the disk is mounted.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.9.1.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Path where the disk is mounted.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='dskPercent' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Percentage of space used on disk
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.9.1.9
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Percentage of space used on disk
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='dskPercentNode' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Percentage of inodes used on disk
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.9.1.10
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Percentage of inodes used on disk
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='dskTable' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Disk watching information.  Partions to be watched
+are configured by the snmpd.conf file of the agent.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+table
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.9
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Disk watching information.  Partions to be watched
+are configured by the snmpd.conf file of the agent.
+</property>
+</object>
+<object id='dskTotal' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Total size of the disk/partion (kBytes)
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.9.1.6
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Total size of the disk/partion (kBytes)
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='dskTotalHigh' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Total size of the disk/partion (kBytes).
+Together with dskTotalLow composes 64-bit number.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.9.1.12
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Total size of the disk/partion (kBytes).
+Together with dskTotalLow composes 64-bit number.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='dskTotalLow' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Total size of the disk/partion (kBytes).
+Together with dskTotalHigh composes 64-bit number.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.9.1.11
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Total size of the disk/partion (kBytes).
+Together with dskTotalHigh composes 64-bit number.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='dskUsed' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Used space on the disk
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.9.1.8
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Used space on the disk
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='dskUsedHigh' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Used space on the disk (kBytes).
+Together with dskUsedLow composes 64-bit number.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.9.1.16
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Used space on the disk (kBytes).
+Together with dskUsedLow composes 64-bit number.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='dskUsedLow' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Used space on the disk (kBytes).
+Together with dskUsedHigh composes 64-bit number.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.9.1.15
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Used space on the disk (kBytes).
+Together with dskUsedHigh composes 64-bit number.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='extCommand' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The command line to be executed.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.8.1.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The command line to be executed.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='extEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+An entry containing an extensible script/program and its output.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+row
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.8.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+An entry containing an extensible script/program and its output.
+</property>
+</object>
+<object id='extErrFix' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Setting this to one will try to fix the problem if
+the agent has been configured with a script to call
+to attempt to fix problems automatically using remote
+snmp operations.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.8.1.102
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Setting this to one will try to fix the problem if
+the agent has been configured with a script to call
+to attempt to fix problems automatically using remote
+snmp operations.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='extErrFixCmd' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The command that gets run when the extErrFix column is 
+set to 1.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.8.1.103
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The command that gets run when the extErrFix column is 
+set to 1.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='extIndex' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Reference Index for extensible scripts.  Simply an
+integer row number.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.8.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Reference Index for extensible scripts.  Simply an
+integer row number.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='extNames' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A Short, one name description of the extensible command.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.8.1.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A Short, one name description of the extensible command.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='extOutput' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The first line of output of the executed command.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.8.1.101
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The first line of output of the executed command.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='extResult' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The result code (exit status) from the executed command.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.8.1.100
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The result code (exit status) from the executed command.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='extTable' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A table of extensible commands returning output and
+result codes.  These commands are configured via the
+agent's snmpd.conf file.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+table
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.8
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A table of extensible commands returning output and
+result codes.  These commands are configured via the
+agent's snmpd.conf file.
+</property>
+</object>
+<object id='fileEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Entry of file
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+row
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.15.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Entry of file
+</property>
+</object>
+<object id='fileErrorFlag' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Limit exceeded flag
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.15.1.100
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Limit exceeded flag
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='fileErrorMsg' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Filesize error message
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.15.1.101
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Filesize error message
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='fileIndex' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Index of file
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.15.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Index of file
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='fileMax' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Limit of filesize (kB)
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.15.1.4
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Limit of filesize (kB)
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='fileName' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Filename
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.15.1.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Filename
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='fileSize' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Size of file (kB)
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.15.1.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Size of file (kB)
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='fileTable' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Table of monitored files.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+table
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.15
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Table of monitored files.
+</property>
+</object>
+<object id='freebsd' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.250.8
+</property>
+</object>
+<object id='hpux10' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.250.6
+</property>
+</object>
+<object id='hpux11' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.250.14
+</property>
+</object>
+<object id='hpux9' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.250.1
+</property>
+</object>
+<object id='irix' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.250.9
+</property>
+</object>
+<object id='laConfig' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The watch point for load-averages to signal an
+error.  If the load averages rises above this value,
+the laErrorFlag below is set.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.10.1.4
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The watch point for load-averages to signal an
+error.  If the load averages rises above this value,
+the laErrorFlag below is set.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='laEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+An entry containing a load average and its values.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+row
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.10.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+An entry containing a load average and its values.
+</property>
+</object>
+<object id='laErrMessage' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+An error message describing the load-average and its
+surpased watch-point value.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.10.1.101
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+An error message describing the load-average and its
+surpased watch-point value.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='laErrorFlag' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A Error flag to indicate the load-average has crossed
+its threshold value defined in the snmpd.conf file.
+It is set to 1 if the threshold is crossed, 0 otherwise.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.10.1.100
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A Error flag to indicate the load-average has crossed
+its threshold value defined in the snmpd.conf file.
+It is set to 1 if the threshold is crossed, 0 otherwise.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='laIndex' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+reference index/row number for each observed loadave.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.10.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+reference index/row number for each observed loadave.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='laLoad' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The 1,5 and 15 minute load averages (one per row).
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.10.1.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The 1,5 and 15 minute load averages (one per row).
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='laLoadFloat' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The 1,5 and 15 minute load averages as an opaquely
+wrapped floating point number.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.10.1.6
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The 1,5 and 15 minute load averages as an opaquely
+wrapped floating point number.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='laLoadInt' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The 1,5 and 15 minute load averages as an integer.
+This is computed by taking the floating point
+loadaverage value and multiplying by 100, then
+converting the value to an integer.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.10.1.5
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The 1,5 and 15 minute load averages as an integer.
+This is computed by taking the floating point
+loadaverage value and multiplying by 100, then
+converting the value to an integer.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='laNames' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The list of loadave names we're watching.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.10.1.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The list of loadave names we're watching.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='laTable' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Load average information.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+table
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.10
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Load average information.
+</property>
+</object>
+<object id='linux' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.250.10
+</property>
+</object>
+<object id='logMatch' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.16
+</property>
+</object>
+<object id='logMatchCount' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Description.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.16.2.1.10
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Description.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='logMatchCounter' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Regex match counter. This counter will
+be reset with each read
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.16.2.1.9
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Regex match counter. This counter will
+be reset with each read
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='logMatchCurrentCount' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Description.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.16.2.1.8
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Description.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='logMatchCurrentCounter' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Regex match counter. This counter will
+be reset with each logfile rotation.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.16.2.1.7
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Regex match counter. This counter will
+be reset with each logfile rotation.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='logMatchCycle' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+time between updates (if not queried) in seconds
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.16.2.1.11
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+time between updates (if not queried) in seconds
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='logMatchEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Entry of file
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+row
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.16.2.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Entry of file
+</property>
+</object>
+<object id='logMatchErrorFlag' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+errorflag: is this line configured correctly?
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.16.2.1.100
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+errorflag: is this line configured correctly?
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='logMatchFilename' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+filename to be logmatched
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.16.2.1.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+filename to be logmatched
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='logMatchGlobalCount' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Description.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.16.2.1.6
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Description.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='logMatchGlobalCounter' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+global count of matches
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.16.2.1.5
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+global count of matches
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='logMatchIndex' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Index of logmatch
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.16.2.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Index of logmatch
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='logMatchMaxEntries' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The maximum number of logmatch entries
+this snmpd daemon can support.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.16.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The maximum number of logmatch entries
+this snmpd daemon can support.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='logMatchName' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+logmatch instance name
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.16.2.1.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+logmatch instance name
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='logMatchRegEx' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+regular expression
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.16.2.1.4
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+regular expression
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='logMatchRegExCompilation' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+message of regex precompilation
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.16.2.1.101
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+message of regex precompilation
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='logMatchTable' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Table of monitored files.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+table
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.16.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Table of monitored files.
+</property>
+</object>
+<object id='memAvailReal' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The amount of real/physical memory currently unused
+or available.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.4.6
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The amount of real/physical memory currently unused
+or available.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='memAvailRealTXT' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The amount of real/physical memory currently being
+used by text pages on this host.
+
+This object will not be implemented on hosts where the
+underlying operating system does not distinguish text
+pages from other uses of physical memory.
+
+Note that (despite the name), this value reports the
+amount used, rather than the amount free or available
+for use.  For clarity, this object is being deprecated
+in favour of 'memUsedRealTXT(17).
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.4.10
+</property>
+<property type="string" id="status" mode="w" >
+deprecated
+</property>
+<property type="string" id="description" mode="w" >
+The amount of real/physical memory currently being
+used by text pages on this host.
+
+This object will not be implemented on hosts where the
+underlying operating system does not distinguish text
+pages from other uses of physical memory.
+
+Note that (despite the name), this value reports the
+amount used, rather than the amount free or available
+for use.  For clarity, this object is being deprecated
+in favour of 'memUsedRealTXT(17).
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='memAvailSwap' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The amount of swap space currently unused or available.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.4.4
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The amount of swap space currently unused or available.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='memAvailSwapTXT' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The amount of swap space or virtual memory currently
+being used by text pages on this host.
+
+This object will not be implemented on hosts where the
+underlying operating system does not distinguish text
+pages from other uses of swap space or virtual memory.
+
+Note that (despite the name), this value reports the
+amount used, rather than the amount free or available
+for use.  For clarity, this object is being deprecated
+in favour of 'memUsedSwapTXT(16).
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.4.8
+</property>
+<property type="string" id="status" mode="w" >
+deprecated
+</property>
+<property type="string" id="description" mode="w" >
+The amount of swap space or virtual memory currently
+being used by text pages on this host.
+
+This object will not be implemented on hosts where the
+underlying operating system does not distinguish text
+pages from other uses of swap space or virtual memory.
+
+Note that (despite the name), this value reports the
+amount used, rather than the amount free or available
+for use.  For clarity, this object is being deprecated
+in favour of 'memUsedSwapTXT(16).
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='memBuffer' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The total amount of real or virtual memory currently
+allocated for use as memory buffers.
+
+This object will not be implemented on hosts where the
+underlying operating system does not explicitly identify
+memory as specifically reserved for this purpose.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.4.14
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The total amount of real or virtual memory currently
+allocated for use as memory buffers.
+
+This object will not be implemented on hosts where the
+underlying operating system does not explicitly identify
+memory as specifically reserved for this purpose.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='memCached' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The total amount of real or virtual memory currently
+allocated for use as cached memory.
+
+This object will not be implemented on hosts where the
+underlying operating system does not explicitly identify
+memory as specifically reserved for this purpose.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.4.15
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The total amount of real or virtual memory currently
+allocated for use as cached memory.
+
+This object will not be implemented on hosts where the
+underlying operating system does not explicitly identify
+memory as specifically reserved for this purpose.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='memErrorName' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Bogus Name. This should always return the string 'swap'.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.4.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Bogus Name. This should always return the string 'swap'.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='memIndex' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Bogus Index.  This should always return the integer 0.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.4.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Bogus Index.  This should always return the integer 0.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='memMinimumSwap' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The minimum amount of swap space expected to be kept
+free or available during normal operation of this host.
+
+If this value (as reported by 'memAvailSwap(4)') falls
+below the specified level, then 'memSwapError(100)' will
+be set to 1 and an error message made available via
+'memSwapErrorMsg(101)'.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.4.12
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The minimum amount of swap space expected to be kept
+free or available during normal operation of this host.
+
+If this value (as reported by 'memAvailSwap(4)') falls
+below the specified level, then 'memSwapError(100)' will
+be set to 1 and an error message made available via
+'memSwapErrorMsg(101)'.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='memShared' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The total amount of real or virtual memory currently
+allocated for use as shared memory.
+
+This object will not be implemented on hosts where the
+underlying operating system does not explicitly identify
+memory as specifically reserved for this purpose.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.4.13
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The total amount of real or virtual memory currently
+allocated for use as shared memory.
+
+This object will not be implemented on hosts where the
+underlying operating system does not explicitly identify
+memory as specifically reserved for this purpose.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='memSwapError' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Indicates whether the amount of available swap space
+(as reported by 'memAvailSwap(4)'), is less than the
+desired minimum (specified by 'memMinimumSwap(12)').
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.4.100
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Indicates whether the amount of available swap space
+(as reported by 'memAvailSwap(4)'), is less than the
+desired minimum (specified by 'memMinimumSwap(12)').
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='memSwapErrorMsg' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Describes whether the amount of available swap space
+(as reported by 'memAvailSwap(4)'), is less than the
+desired minimum (specified by 'memMinimumSwap(12)').
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.4.101
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Describes whether the amount of available swap space
+(as reported by 'memAvailSwap(4)'), is less than the
+desired minimum (specified by 'memMinimumSwap(12)').
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='memTotalFree' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The total amount of memory free or available for use on
+this host.  This value typically covers both real memory
+and swap space or virtual memory.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.4.11
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The total amount of memory free or available for use on
+this host.  This value typically covers both real memory
+and swap space or virtual memory.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='memTotalReal' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The total amount of real/physical memory installed
+on this host.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.4.5
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The total amount of real/physical memory installed
+on this host.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='memTotalRealTXT' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The total amount of real/physical memory allocated
+for text pages on this host.
+
+This object will not be implemented on hosts where the
+underlying operating system does not distinguish text
+pages from other uses of physical memory.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.4.9
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The total amount of real/physical memory allocated
+for text pages on this host.
+
+This object will not be implemented on hosts where the
+underlying operating system does not distinguish text
+pages from other uses of physical memory.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='memTotalSwap' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The total amount of swap space configured for this host.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.4.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The total amount of swap space configured for this host.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='memTotalSwapTXT' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The total amount of swap space or virtual memory allocated
+for text pages on this host.
+
+This object will not be implemented on hosts where the
+underlying operating system does not distinguish text
+pages from other uses of swap space or virtual memory.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.4.7
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The total amount of swap space or virtual memory allocated
+for text pages on this host.
+
+This object will not be implemented on hosts where the
+underlying operating system does not distinguish text
+pages from other uses of swap space or virtual memory.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='memUsedRealTXT' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The amount of real/physical memory currently being
+used by text pages on this host.
+
+This object will not be implemented on hosts where the
+underlying operating system does not distinguish text
+pages from other uses of physical memory.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.4.17
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The amount of real/physical memory currently being
+used by text pages on this host.
+
+This object will not be implemented on hosts where the
+underlying operating system does not distinguish text
+pages from other uses of physical memory.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='memUsedSwapTXT' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The amount of swap space or virtual memory currently
+being used by text pages on this host.
+
+This object will not be implemented on hosts where the
+underlying operating system does not distinguish text
+pages from other uses of swap space or virtual memory.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.4.16
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The amount of swap space or virtual memory currently
+being used by text pages on this host.
+
+This object will not be implemented on hosts where the
+underlying operating system does not distinguish text
+pages from other uses of swap space or virtual memory.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='memory' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.4
+</property>
+</object>
+<object id='mrEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+An entry containing a registered mib oid.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+row
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.102.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+An entry containing a registered mib oid.
+</property>
+</object>
+<object id='mrIndex' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The registry slot of a mibmodule.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.102.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The registry slot of a mibmodule.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mrModuleName' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The module name that registered this OID.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.102.1.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The module name that registered this OID.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mrTable' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A table displaying all the oid's registered by mib modules in
+the agent.  Since the agent is modular in nature, this lists
+each module's OID it is responsible for and the name of the module
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+table
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.102
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A table displaying all the oid's registered by mib modules in
+the agent.  Since the agent is modular in nature, this lists
+each module's OID it is responsible for and the name of the module
+</property>
+</object>
+<object id='netbsd1' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.250.7
+</property>
+</object>
+<object id='openbsd' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.250.12
+</property>
+</object>
+<object id='osf' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.250.4
+</property>
+</object>
+<object id='prCount' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The number of current processes running with the name
+in question.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.2.1.5
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The number of current processes running with the name
+in question.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='prEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+An entry containing a process and its statistics.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+row
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.2.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+An entry containing a process and its statistics.
+</property>
+</object>
+<object id='prErrFix' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Setting this to one will try to fix the problem if
+the agent has been configured with a script to call
+to attempt to fix problems automatically using remote
+snmp operations.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.2.1.102
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Setting this to one will try to fix the problem if
+the agent has been configured with a script to call
+to attempt to fix problems automatically using remote
+snmp operations.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='prErrFixCmd' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The command that gets run when the prErrFix column is 
+set to 1.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.2.1.103
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The command that gets run when the prErrFix column is 
+set to 1.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='prErrMessage' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+An error message describing the problem (if one exists).
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.2.1.101
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+An error message describing the problem (if one exists).
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='prErrorFlag' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A Error flag to indicate trouble with a process.  It
+goes to 1 if there is an error, 0 if no error.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.2.1.100
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A Error flag to indicate trouble with a process.  It
+goes to 1 if there is an error, 0 if no error.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='prIndex' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Reference Index for each observed process.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.2.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Reference Index for each observed process.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='prMax' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The maximum number of processes that should be
+running.  An error flag is generated if the number of
+running processes is &gt; the maximum.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.2.1.4
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The maximum number of processes that should be
+running.  An error flag is generated if the number of
+running processes is &gt; the maximum.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='prMin' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The minimum number of processes that should be
+running.  An error flag is generated if the number of
+running processes is &lt; the minimum.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.2.1.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The minimum number of processes that should be
+running.  An error flag is generated if the number of
+running processes is &lt; the minimum.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='prNames' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The process name we're counting/checking on.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.2.1.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The process name we're counting/checking on.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='prTable' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A table containing information on running
+programs/daemons configured for monitoring in the
+snmpd.conf file of the agent.  Processes violating the
+number of running processes required by the agent's
+configuration file are flagged with numerical and
+textual errors.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+table
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A table containing information on running
+programs/daemons configured for monitoring in the
+snmpd.conf file of the agent.  Processes violating the
+number of running processes required by the agent's
+configuration file are flagged with numerical and
+textual errors.
+</property>
+</object>
+<object id='snmperrErrMessage' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+An error message describing the problem (if one exists).
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.101.101
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+An error message describing the problem (if one exists).
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='snmperrErrorFlag' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A Error flag to indicate trouble with the agent.  It
+goes to 1 if there is an error, 0 if no error.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.101.100
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A Error flag to indicate trouble with the agent.  It
+goes to 1 if there is an error, 0 if no error.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='snmperrIndex' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Bogus Index for snmperrs (always 0).
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.101.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Bogus Index for snmperrs (always 0).
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='snmperrNames' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+snmp
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.101.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+snmp
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='snmperrs' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.101
+</property>
+</object>
+<object id='solaris' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.250.3
+</property>
+</object>
+<object id='ssCpuIdle' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The percentage of processor time spent idle,
+calculated over the last minute.
+
+ This object has been deprecated in favour of
+'ssCpuRawIdle(53)', which can be used to calculate
+the same metric, but over any desired time period.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.11.11
+</property>
+<property type="string" id="status" mode="w" >
+deprecated
+</property>
+<property type="string" id="description" mode="w" >
+The percentage of processor time spent idle,
+calculated over the last minute.
+
+ This object has been deprecated in favour of
+'ssCpuRawIdle(53)', which can be used to calculate
+the same metric, but over any desired time period.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='ssCpuRawIdle' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The number of 'ticks' (typically 1/100s) spent
+idle.
+
+On a multi-processor system, the 'ssCpuRaw*'
+counters are cumulative over all CPUs, so their
+sum will typically be N*100 (for N processors).
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.11.53
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The number of 'ticks' (typically 1/100s) spent
+idle.
+
+On a multi-processor system, the 'ssCpuRaw*'
+counters are cumulative over all CPUs, so their
+sum will typically be N*100 (for N processors).
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='ssCpuRawInterrupt' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The number of 'ticks' (typically 1/100s) spent
+processing hardware interrupts.
+
+This object will not be implemented on hosts where
+the underlying operating system does not measure
+this particular CPU metric.
+
+On a multi-processor system, the 'ssCpuRaw*'
+counters are cumulative over all CPUs, so their
+sum will typically be N*100 (for N processors).
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.11.56
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The number of 'ticks' (typically 1/100s) spent
+processing hardware interrupts.
+
+This object will not be implemented on hosts where
+the underlying operating system does not measure
+this particular CPU metric.
+
+On a multi-processor system, the 'ssCpuRaw*'
+counters are cumulative over all CPUs, so their
+sum will typically be N*100 (for N processors).
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='ssCpuRawKernel' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The number of 'ticks' (typically 1/100s) spent
+processing kernel-level code.
+
+This object will not be implemented on hosts where
+the underlying operating system does not measure
+this particular CPU metric.  This time may also be
+included within the 'ssCpuRawSystem(52)' counter.
+
+On a multi-processor system, the 'ssCpuRaw*'
+counters are cumulative over all CPUs, so their
+sum will typically be N*100 (for N processors).
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.11.55
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The number of 'ticks' (typically 1/100s) spent
+processing kernel-level code.
+
+This object will not be implemented on hosts where
+the underlying operating system does not measure
+this particular CPU metric.  This time may also be
+included within the 'ssCpuRawSystem(52)' counter.
+
+On a multi-processor system, the 'ssCpuRaw*'
+counters are cumulative over all CPUs, so their
+sum will typically be N*100 (for N processors).
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='ssCpuRawNice' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The number of 'ticks' (typically 1/100s) spent
+processing reduced-priority code.
+
+This object will not be implemented on hosts where
+the underlying operating system does not measure
+this particular CPU metric.
+
+On a multi-processor system, the 'ssCpuRaw*'
+counters are cumulative over all CPUs, so their
+sum will typically be N*100 (for N processors).
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.11.51
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The number of 'ticks' (typically 1/100s) spent
+processing reduced-priority code.
+
+This object will not be implemented on hosts where
+the underlying operating system does not measure
+this particular CPU metric.
+
+On a multi-processor system, the 'ssCpuRaw*'
+counters are cumulative over all CPUs, so their
+sum will typically be N*100 (for N processors).
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='ssCpuRawSoftIRQ' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The number of 'ticks' (typically 1/100s) spent
+processing software interrupts.
+
+This object will not be implemented on hosts where
+the underlying operating system does not measure
+this particular CPU metric.
+
+On a multi-processor system, the 'ssCpuRaw*'
+counters are cumulative over all CPUs, so their
+sum will typically be N*100 (for N processors).
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.11.61
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The number of 'ticks' (typically 1/100s) spent
+processing software interrupts.
+
+This object will not be implemented on hosts where
+the underlying operating system does not measure
+this particular CPU metric.
+
+On a multi-processor system, the 'ssCpuRaw*'
+counters are cumulative over all CPUs, so their
+sum will typically be N*100 (for N processors).
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='ssCpuRawSystem' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The number of 'ticks' (typically 1/100s) spent
+processing system-level code.
+
+On a multi-processor system, the 'ssCpuRaw*'
+counters are cumulative over all CPUs, so their
+sum will typically be N*100 (for N processors).
+
+This object may sometimes be implemented as the
+combination of the 'ssCpuRawWait(54)' and
+'ssCpuRawKernel(55)' counters, so care must be
+taken when summing the overall raw counters.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.11.52
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The number of 'ticks' (typically 1/100s) spent
+processing system-level code.
+
+On a multi-processor system, the 'ssCpuRaw*'
+counters are cumulative over all CPUs, so their
+sum will typically be N*100 (for N processors).
+
+This object may sometimes be implemented as the
+combination of the 'ssCpuRawWait(54)' and
+'ssCpuRawKernel(55)' counters, so care must be
+taken when summing the overall raw counters.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='ssCpuRawUser' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The number of 'ticks' (typically 1/100s) spent
+processing user-level code.
+
+On a multi-processor system, the 'ssCpuRaw*'
+counters are cumulative over all CPUs, so their
+sum will typically be N*100 (for N processors).
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.11.50
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The number of 'ticks' (typically 1/100s) spent
+processing user-level code.
+
+On a multi-processor system, the 'ssCpuRaw*'
+counters are cumulative over all CPUs, so their
+sum will typically be N*100 (for N processors).
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='ssCpuRawWait' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The number of 'ticks' (typically 1/100s) spent
+waiting for IO.
+
+This object will not be implemented on hosts where
+the underlying operating system does not measure
+this particular CPU metric.  This time may also be
+included within the 'ssCpuRawSystem(52)' counter.
+
+On a multi-processor system, the 'ssCpuRaw*'
+counters are cumulative over all CPUs, so their
+sum will typically be N*100 (for N processors).
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.11.54
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The number of 'ticks' (typically 1/100s) spent
+waiting for IO.
+
+This object will not be implemented on hosts where
+the underlying operating system does not measure
+this particular CPU metric.  This time may also be
+included within the 'ssCpuRawSystem(52)' counter.
+
+On a multi-processor system, the 'ssCpuRaw*'
+counters are cumulative over all CPUs, so their
+sum will typically be N*100 (for N processors).
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='ssCpuSystem' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The percentage of CPU time spent processing
+system-level code, calculated over the last minute.
+
+ This object has been deprecated in favour of
+'ssCpuRawSystem(52)', which can be used to calculate
+the same metric, but over any desired time period.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.11.10
+</property>
+<property type="string" id="status" mode="w" >
+deprecated
+</property>
+<property type="string" id="description" mode="w" >
+The percentage of CPU time spent processing
+system-level code, calculated over the last minute.
+
+ This object has been deprecated in favour of
+'ssCpuRawSystem(52)', which can be used to calculate
+the same metric, but over any desired time period.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='ssCpuUser' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The percentage of CPU time spent processing
+user-level code, calculated over the last minute.
+
+ This object has been deprecated in favour of
+'ssCpuRawUser(50)', which can be used to calculate
+the same metric, but over any desired time period.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.11.9
+</property>
+<property type="string" id="status" mode="w" >
+deprecated
+</property>
+<property type="string" id="description" mode="w" >
+The percentage of CPU time spent processing
+user-level code, calculated over the last minute.
+
+ This object has been deprecated in favour of
+'ssCpuRawUser(50)', which can be used to calculate
+the same metric, but over any desired time period.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='ssErrorName' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Bogus Name. This should always return the string 'systemStats'.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.11.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Bogus Name. This should always return the string 'systemStats'.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='ssIORawReceived' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Number of blocks received from a block device
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.11.58
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Number of blocks received from a block device
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='ssIORawSent' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Number of blocks sent to a block device
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.11.57
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Number of blocks sent to a block device
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='ssIOReceive' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The average amount of data read from disk or other
+block device, calculated over the last minute.
+
+ This object has been deprecated in favour of
+'ssIORawReceived(58)', which can be used to calculate
+the same metric, but over any desired time period.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.11.6
+</property>
+<property type="string" id="status" mode="w" >
+deprecated
+</property>
+<property type="string" id="description" mode="w" >
+The average amount of data read from disk or other
+block device, calculated over the last minute.
+
+ This object has been deprecated in favour of
+'ssIORawReceived(58)', which can be used to calculate
+the same metric, but over any desired time period.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='ssIOSent' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The average amount of data written to disk or other
+block device, calculated over the last minute.
+
+ This object has been deprecated in favour of
+'ssIORawSent(57)', which can be used to calculate
+the same metric, but over any desired time period.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.11.5
+</property>
+<property type="string" id="status" mode="w" >
+deprecated
+</property>
+<property type="string" id="description" mode="w" >
+The average amount of data written to disk or other
+block device, calculated over the last minute.
+
+ This object has been deprecated in favour of
+'ssIORawSent(57)', which can be used to calculate
+the same metric, but over any desired time period.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='ssIndex' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Bogus Index.  This should always return the integer 1.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.11.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Bogus Index.  This should always return the integer 1.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='ssRawContexts' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Number of context switches
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.11.60
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Number of context switches
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='ssRawInterrupts' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Number of interrupts processed
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.11.59
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Number of interrupts processed
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='ssRawSwapIn' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Number of blocks swapped in
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.11.62
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Number of blocks swapped in
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='ssRawSwapOut' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Number of blocks swapped out
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.11.63
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Number of blocks swapped out
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='ssSwapIn' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The average amount of memory swapped in from disk,
+calculated over the last minute.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.11.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The average amount of memory swapped in from disk,
+calculated over the last minute.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='ssSwapOut' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The average amount of memory swapped out to disk,
+calculated over the last minute.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.11.4
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The average amount of memory swapped out to disk,
+calculated over the last minute.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='ssSysContext' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The average rate of context switches,
+calculated over the last minute.
+
+ This object has been deprecated in favour of
+'ssRawContext(60)', which can be used to calculate
+the same metric, but over any desired time period.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.11.8
+</property>
+<property type="string" id="status" mode="w" >
+deprecated
+</property>
+<property type="string" id="description" mode="w" >
+The average rate of context switches,
+calculated over the last minute.
+
+ This object has been deprecated in favour of
+'ssRawContext(60)', which can be used to calculate
+the same metric, but over any desired time period.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='ssSysInterrupts' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The average rate of interrupts processed (including
+the clock) calculated over the last minute.
+
+ This object has been deprecated in favour of
+'ssRawInterrupts(59)', which can be used to calculate
+the same metric, but over any desired time period.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.11.7
+</property>
+<property type="string" id="status" mode="w" >
+deprecated
+</property>
+<property type="string" id="description" mode="w" >
+The average rate of interrupts processed (including
+the clock) calculated over the last minute.
+
+ This object has been deprecated in favour of
+'ssRawInterrupts(59)', which can be used to calculate
+the same metric, but over any desired time period.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='sunos4' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.250.2
+</property>
+</object>
+<object id='systemStats' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.11
+</property>
+</object>
+<object id='ucdExperimental' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.13
+</property>
+</object>
+<object id='ucdInternal' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.12
+</property>
+</object>
+<object id='ucdSnmpAgent' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.250
+</property>
+</object>
+<object id='ucdTraps' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.251
+</property>
+</object>
+<object id='ucdavis' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+</object>
+<object id='ultrix' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.250.5
+</property>
+</object>
+<object id='unknown' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.250.255
+</property>
+</object>
+<object id='version' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.100
+</property>
+</object>
+<object id='versionCDate' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Date string from ctime() 
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.100.4
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Date string from ctime()
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='versionClearCache' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Set to 1 to clear the exec cache, if enabled
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.100.10
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Set to 1 to clear the exec cache, if enabled
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='versionConfigureOptions' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Options passed to the configure script when this agent was built.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.100.6
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Options passed to the configure script when this agent was built.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='versionDate' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Date string from RCS keyword
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.100.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Date string from RCS keyword
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='versionDoDebugging' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Set to 1 to turn debugging statements on in the agent or 0
+to turn it off.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.100.20
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Set to 1 to turn debugging statements on in the agent or 0
+to turn it off.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='versionIdent' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Id string from RCS keyword
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.100.5
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Id string from RCS keyword
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='versionIndex' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Index to mib (always 0)
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.100.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Index to mib (always 0)
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='versionRestartAgent' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Set to 1 to restart the agent.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.100.12
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Set to 1 to restart the agent.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='versionSavePersistentData' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Set to 1 to force the agent to save it's persistent data immediately.
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.100.13
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Set to 1 to force the agent to save it's persistent data immediately.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='versionTag' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+CVS tag keyword
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.100.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+CVS tag keyword
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='versionUpdateConfig' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Set to 1 to read-read the config file(s).
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.100.11
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Set to 1 to read-read the config file(s).
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='win32' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.250.13
+</property>
+</object>
+</tomanycont>
+<tomanycont id='notifications'>
+<object id='ucdShutdown' module='Products.ZenModel.MibNotification' class='MibNotification'>
+<property id='zendoc' type='string'>
+This trap is sent when the agent terminates
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+notification
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.251.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This trap is sent when the agent terminates
+</property>
+<property type="lines" id="objects" mode="w" >
+{}
+</property>
+</object>
+<object id='ucdStart' module='Products.ZenModel.MibNotification' class='MibNotification'>
+<property id='zendoc' type='string'>
+This trap could in principle be sent when the agent start
+</property>
+<property type="string" id="moduleName" mode="w" >
+UCD-SNMP-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+notification
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.2021.251.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This trap could in principle be sent when the agent start
+</property>
+<property type="lines" id="objects" mode="w" >
+{}
+</property>
+</object>
+</tomanycont>
+</object>
+</objects>

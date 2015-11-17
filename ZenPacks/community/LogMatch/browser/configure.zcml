@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configure xmlns="http://namespaces.zope.org/browser">
+
+    <!-- A resource directory contains static web content. -->
+    <!-- name can be anything unique but is used below in the paths statement -->
+    <!-- directory is the path from this configure.zcml to where the js directory is -->
+    <resourceDirectory
+        name="LogMatchJavascript"
+        directory="resources"
+        />
+
+    <!-- Register custom JavaScript for LogMatch devices. -->
+    <!-- name can be anything unique -->
+    <!-- In paths, /++resource++LogMatchJavascript substitutes the LogMatchJavascript name
+         defined above, into the path to the Javascript file, resulting in 
+         resources/js/LogMatch.js, relative to where this configure.zcml is -->
+    <!-- The weight field indicates the order of multiple viewlets where 1 would be at the top -->
+    <!-- In for, the path to the LogMatchDevice class in the LogMatchDevice module
+         is up one directory from where this configure.zcml sits  -->
+
+    <viewlet
+        name="js-LogMatchJavascriptJs"
+        paths="/++resource++LogMatchJavascript/js/LogMatch.js"
+        weight="10"
+        for="..LogMatchDevice.LogMatchDevice"
+        manager="Products.ZenUI3.browser.interfaces.IJavaScriptSrcManager"
+        class="Products.ZenUI3.browser.javascript.JavaScriptSrcBundleViewlet"
+        permission="zope2.Public"
+        />
+
+</configure>
