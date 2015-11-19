@@ -18,7 +18,10 @@ Device and component object classes
   - versionTag
   - versionDate
 
-
+The 1.0.2 version of this ZenPack ignores the LogMatchDevice definition and
+modifies the __init__.py to make the LogMatch a component of the os component of
+the Device class.  The versionTag and versionDate attributes are added directly to
+the Device class attributes.
 
 * LogMatch component with new attributes:
 
@@ -50,6 +53,9 @@ Modeler Plugins
   - logMatchErrorFlag
   - logMatchRegExCompilation
 
+The 1.0.2 version of the ZenPack chnges the LogMatchMap modeler to ensure the LogMatch
+components are added to a Device's os component.
+
 
 Monitoring Templates
 --------------------
@@ -78,6 +84,9 @@ Set the zPythonPath zProperty of the new class to be ZenPacks.community.LogMatch
 
 The community.snmp.LogMatchDeviceMap and community.snmp.LogMatchMap modeler plugins should also be
 assigned to this Zenoss Device Class.
+
+The 1.0.2 version of the ZenPack will need the modeler plugins assigning either to a relevant
+class or to specifi device instances.
 
 
 Requirements & Dependencies
@@ -130,6 +139,11 @@ Change History
 * 1.0.1
    - Modified Overview display for LogMatchDevice devices to remove SNMP community and to add 
      versionTag and versionDate to the SNMP panel.
+* 1.0.2
+   - The 1.0.2 version of this ZenPack ignores the LogMatchDevice definition and
+     modifies the __init__.py to make the LogMatch a component of the os component of
+     the Device class.  The versionTag and versionDate attributes are added directly to
+     the Device class attributes. The version is held in the device branch on github.
 
 Screenshots
 ===========
@@ -139,7 +153,7 @@ See the screenshots directory.
 
 .. External References Below. Nothing Below This Line Should Be Rendered
 
-.. _Latest Package for Python 2.7: https://github.com/ZenossDevGuide/ZenPacks.community.LogMatch/blob/master/dist/ZenPacks.community.LogMatch-1.0.1-py2.7.egg?raw=true
+.. _Latest Package for Python 2.7: https://github.com/ZenossDevGuide/ZenPacks.community.LogMatch/blob/device/dist/ZenPacks.community.LogMatch-1.0.2-py2.7.egg?raw=true
 
 Acknowledgements
 ================

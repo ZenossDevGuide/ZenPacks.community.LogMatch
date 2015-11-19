@@ -23,6 +23,9 @@ class LogMatchMap(SnmpPlugin):
 
     relname = "logMatchs"
     modname = "ZenPacks.community.LogMatch.LogMatch"
+    # It is a component of the os component of a device that we want to populate
+    compname = "os"
+
 
     # snmpGetTableMaps and GetTableMap should be used to request SNMP tables.
     # The parameters are:

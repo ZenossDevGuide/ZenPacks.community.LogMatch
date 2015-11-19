@@ -1,6 +1,6 @@
 from Products.ZenModel.DeviceComponent import DeviceComponent
 from Products.ZenModel.ManagedEntity import ManagedEntity
-from Products.ZenModel.ZenossSecurity import ZEN_CHANGE_DEVICE
+from Products.ZenModel.OSComponent import OSComponent
 from Products.ZenRelations.RelSchema import ToManyCont, ToOne
 
 class LogMatch(DeviceComponent, ManagedEntity):
@@ -25,28 +25,29 @@ class LogMatch(DeviceComponent, ManagedEntity):
     )
     #****************
 
-    _relations = ManagedEntity._relations + (
-        ('logMatchDevice', ToOne(ToManyCont,
-            'ZenPacks.community.LogMatch.LogMatchDevice.LogMatchDevice',
-            'logMatchs',
-            ),
-        ),
+    # The logMatchs relationship does not exist in the default Products.ZenModel.OperatingSystem
+    # It is monkey-patched in the __init__.py of this zenpack
+    _relations = OSComponent._relations + (
+        ('os', ToOne(ToManyCont,
+            'Products.ZenModel.OperatingSystem', 'logMatchs')),
     )
+
+    #_relations = ManagedEntity._relations + (
+    #    ('logMatchDevice', ToOne(ToManyCont,
+    #        'ZenPacks.community.LogMatch.LogMatchDevice.LogMatchDevice',
+    #        'logMatchs',
+    #        ),
+    #    ),
+    #)
 
     # Custom components must always implement the device method. The method
     # should return the device object that contains the component.
     #    ie. follow the logMatchDevice relationship
-    def device(self):
-        return self.logMatchDevice()
+    #def device(self):
+    #    return self.logMatchDevice()
 
-    # Defining the "perfConf" action here causes the "Graphs" display to be
-    # available for components of this type.
-    #factory_type_information = ({
-    #    'actions': ({
-    #        'id': 'perfConf',
-    #        'name': 'Template',
-    #        'action': 'objTemplates',
-    #        'permissions': (ZEN_CHANGE_DEVICE,),
-    #    },),
-    #},)
+    def device(self):
+        os = self.os()
+        if os: return os.device()
+
 

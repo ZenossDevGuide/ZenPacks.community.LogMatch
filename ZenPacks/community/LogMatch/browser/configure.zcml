@@ -22,16 +22,28 @@
         name="js-LogMatchJavascriptJs"
         paths="/++resource++LogMatchJavascript/js/LogMatch.js"
         weight="10"
-        for="..LogMatchDevice.LogMatchDevice"
+        for="Products.ZenModel.Device.Device"
         manager="Products.ZenUI3.browser.interfaces.IJavaScriptSrcManager"
         class="Products.ZenUI3.browser.javascript.JavaScriptSrcBundleViewlet"
         permission="zope2.Public"
         />
 
+    <!--
     <viewlet
         name="js-custom-overview-device"
         paths="/++resource++LogMatchJavascript/js/custom-overview-device.js"
         for="..LogMatchDevice.LogMatchDevice"
+        weight="10"
+        manager="Products.ZenUI3.browser.interfaces.IJavaScriptSrcManager"
+        class="Products.ZenUI3.browser.javascript.JavaScriptSrcBundleViewlet"
+        permission="zope2.Public"
+        />
+    -->
+
+    <viewlet
+        name="js-custom-overview-device"
+        paths="/++resource++LogMatchJavascript/js/custom-overview-device.js"
+        for="Products.ZenModel.Device.Device"
         weight="10"
         manager="Products.ZenUI3.browser.interfaces.IJavaScriptSrcManager"
         class="Products.ZenUI3.browser.javascript.JavaScriptSrcBundleViewlet"

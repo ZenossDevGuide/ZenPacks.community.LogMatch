@@ -1,6 +1,6 @@
 /*
  * Based on the configuration in ../../configure.zcml this JavaScript will only
- * be loaded when the user is looking at a LogMatchDevice in the web interface.
+ * be loaded when the user is looking at a Device in the web interface.
  */
 
 (function(){
