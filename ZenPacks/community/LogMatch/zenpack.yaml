@@ -1,2 +1,75 @@
 name: ZenPacks.community.LogMatch
 
+device_classes:
+  /Server/Linux/LogMatch:
+    remove: False     # False is default - specified for clarity
+    zProperties:
+      zPythonClass: ZenPacks.community.LogMatch.LogMatchDevice
+      zCollectorPlugins: [community.snmp.LogMatchDeviceMap, community.snmp.LogMatchMap]
+
+
+classes:
+  DEFAULTS:
+    base: [zenpacklib.Component]
+
+  LogMatchDevice:
+    base: [zenpacklib.Device]
+    meta_type: LogMatchDevice  # Will default to this but in for completeness
+    label: LogMatch Host
+
+    properties:
+      versionTag:
+        type: string
+        label: Version Tag
+        short_label: VerTag
+      versionDate:
+        type: string
+        label: Version Date
+        short_label: VerDate
+    relationships:
+      logMatchs:
+        label: logMatchs reln
+        display: false
+
+  LogMatch:
+    label: Log Match Files
+    meta_type: LogMatch   # Will default to this but in for completeness
+    order: 60   # 
+    auto_expand_column: logMatchFilename
+
+    properties:
+      logMatchName:
+        type: string
+        label: LogMatch Name
+        order: 3.1
+      logMatchFilename:
+        type: string
+        label: LogMatch Filename
+        order: 3.2
+      logMatchRegEx:
+        type: string
+        label: LogMatch RegEx
+        order: 3.3
+      logMatchCycle:
+        type: int
+        label: LogMatch Cycle
+        order: 3.4
+      logMatchErrorFlag:
+        type: int
+        label: LogMatch ErrorFlag
+        order: 3.5
+      logMatchRegExCompilation:
+        type: string
+        label: LogMatch RegExCompilation
+        order: 3.6
+
+    relationships:
+      logMatchDevice:
+        label: logMatch Device
+        display: false
+
+
+class_relationships:
+  - LogMatchDevice(logMatchs) 1:MC LogMatch(logMatchDevice)
+
+
