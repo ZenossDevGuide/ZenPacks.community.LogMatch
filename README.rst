@@ -7,6 +7,22 @@ Description
 ===========
 This ZenPack monitors logfiles using SNMP capabilities from the netSnmp UCD agent.
 
+This version of the ZenPack uses zenpacklib.
+
+zenpacklib usage
+----------------
+
+This ZenPack is built with the zenpacklib library so does not have explicit code definitions for
+device classes, device and component objects or zProperties.  Templates are also created through zenpacklib.
+These elements are all created through the zenpack.yaml file in the main directory of the ZenPack.
+See http://zenpacklib.zenoss.com/en/latest/index.html for more information on zenpacklib.
+
+Note that if templates are changed in the zenpack.yaml file then when the ZenPack is reinstalled, the
+existing templates will be renamed in the Zenoss ZODB database and the new template from the YAML file
+will be installed; thus a backup is effectively taken.  Old templates should be deleted in the Zenoss GUI
+when the new version is proven.
+
+
 
 Features
 ========
@@ -85,6 +101,21 @@ Requirements & Dependencies
 
 * Zenoss Versions Supported:  4.x
 * External Dependencies: 
+
+  - The zenpacklib package that this ZenPack is built on, requires PyYAML.  This is installed as standard with Zenoss 5 and with Zenoss 4 with SP457.
+    To test whether it is installed, as the zenoss user, enter the python environment and import yaml::
+
+        python
+        import yaml
+        yaml
+
+        <module 'yaml' from '/opt/zenoss/lib/python2.7/site-packages/PyYAML-3.11-py2.7-linux-x86_64.egg/yaml/__init__.py'>
+
+    If pyYAML is not installed, install it, as the zenoss user, with::
+
+        easy_install PyYAML
+
+    and then rerun the test above.
 
 
 * Installation Notes: 

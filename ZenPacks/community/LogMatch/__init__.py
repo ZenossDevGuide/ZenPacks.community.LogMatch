@@ -1,3 +1,7 @@
+from . import zenpacklib
+
+zenpacklib.load_yaml()
+
 # Nothing is required in this __init__.py, but it is an excellent place to do
 # many things in a ZenPack.
 #

@@ -7,15 +7,5 @@
     <include package=".browser"/>
 
 
-    <adapter factory=".info.LogMatchInfo"
-         for=".LogMatch.LogMatch"
-         provides=".interfaces.ILogMatchInfo"
-         />
-
-    <adapter factory=".info.LogMatchDeviceInfo"
-         for=".LogMatchDevice.LogMatchDevice"
-         provides=".interfaces.ILogMatchDeviceInfo"
-         />
-
 </configure>
 
