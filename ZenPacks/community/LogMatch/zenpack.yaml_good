@@ -29,7 +29,8 @@ classes:
 
     relationships:
       logMatchs:
-        label: logMatchs
+        #label: logMatchs reln
+        label: logMatchsreln
         display: false
 
   LogMatch:
@@ -37,46 +38,38 @@ classes:
     meta_type: LogMatch   # Will default to this but in for completeness
     order: 60   # 
     auto_expand_column: logMatchFilename
-    monitoring_templates: [LogMatch]
 
     properties:
       logMatchName:
         type: string
         label: LogMatch Name
-        label_width: 100
         order: 3.1
       logMatchFilename:
         type: string
         label: LogMatch Filename
-        label_width: 400
         order: 3.2
       logMatchRegEx:
         type: string
         label: LogMatch RegEx
-        label_width: 150
         order: 3.3
       logMatchCycle:
         type: int
         label: LogMatch Cycle
-        grid_display: false
         order: 3.4
       logMatchErrorFlag:
         type: int
         label: LogMatch ErrorFlag
-        label_width: 100
-        grid_display: false
         order: 3.5
       logMatchRegExCompilation:
         type: string
         label: LogMatch RegExCompilation
-        label_width: 100
-        grid_display: false
         order: 3.6
 
     relationships:
       logMatchDevice:
-        label: logMatchDevice
-        display: true
+        label: logMatch Device
+        display: false
+
 
 class_relationships:
   - LogMatchDevice(logMatchs) 1:MC LogMatch(logMatchDevice)

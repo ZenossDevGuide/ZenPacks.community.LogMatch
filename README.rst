@@ -7,7 +7,7 @@ Description
 ===========
 This ZenPack monitors logfiles using SNMP capabilities from the netSnmp UCD agent.
 
-This version of the ZenPack uses zenpacklib.
+This version of the ZenPack uses zenpacklib and is version 1.0.3.
 
 zenpacklib usage
 ----------------
@@ -22,10 +22,30 @@ existing templates will be renamed in the Zenoss ZODB database and the new templ
 will be installed; thus a backup is effectively taken.  Old templates should be deleted in the Zenoss GUI
 when the new version is proven.
 
+Note that the zenpacklib.py file in the main directory of the ZenPack has been modified slightly. The 
+default version places all rrd performance data files directly under a directory named after the device, with 
+subdirectories for instances of components. The original ZenPack (and the older standard default behaviour) 
+was to create a directory hierarchy with an extra subdirectory for relationships.
+
+    * Old: fred.class.example.org/esxiVm/myVm1/cpuUsage.rrd
+    * New: fred.class.example.org/myVm1/cpuUsage.rrd
+
+To be able to preserve performance data, zenpacklib.py has been modified in the rrdPath method to restore 
+the old behaviour. If zenpacklib.py is changed or upgraded for any reason, this same change must be made 
+to preserve the data paths.
 
 
 Features
 ========
+
+Zenoss Device Classes
+---------------------
+
+zenpacklib creates */Server/Linux/LogMatch* with:
+
+* zPythonClass: ZenPacks.community.LogMatch.LogMatchDevice
+* zCollectorPlugins: ['zenoss.snmp.NewDeviceMap', 'zenoss.snmp.DeviceMap', 'HPDeviceMap', 'DellDeviceMap', 'zenoss.snmp.InterfaceMap', 'zenoss.snmp.RouteMap', 'zenoss.snmp.IpServiceMap', 'zenoss.snmp.HRFileSystemMap', 'zenoss.snmp.HRSWRunMap', 'zenoss.snmp.CpuMap', 'HPCPUMap', 'DellCPUMap', 'DellPCIMap', 'zenoss.snmp.SnmpV3EngineIdMap', 'community.snmp.LogMatchDeviceMap', 'community.snmp.LogMatchMap']
+
 
 Device and component object classes
 -----------------------------------
@@ -73,6 +93,8 @@ Monitoring Templates
 * Component templates
 
   - LogMatch with an SNMP datasource to gather logMatchCurrentCounter (1.3.6.1.4.1.2021.16.2.1.7) with a GAUGE datapoint
+  - LogMatchFile with an SNMP datasource to gather logMatchCurrentCounter (1.3.6.1.4.1.2021.16.2.1.7) with a GAUGE datapoint
+    to demonstrate which component template is bound automatically without a monitoring_template keyword.
 
 
 MIBs
@@ -85,15 +107,10 @@ GUI modifications
 
 * The Overview display for a device of object class LogMatchDevice has the SNMP panel
   modified to remove the SNMP community name and to add versionTag and versionDate.
+  With zenpacklib, this is achieved by Javascript in resources/LogMatchDevice.js .
 
 Usage
 =====
-
-It is suggested that a new Zenoss Device Class be created to hold devices of object class LogMatchDevice.
-Set the zPythonPath zProperty of the new class to be ZenPacks.community.LogMatch.LogMatchDevice.
-
-The community.snmp.LogMatchDeviceMap and community.snmp.LogMatchMap modeler plugins should also be
-assigned to this Zenoss Device Class.
 
 
 Requirements & Dependencies
@@ -161,6 +178,16 @@ Change History
 * 1.0.1
    - Modified Overview display for LogMatchDevice devices to remove SNMP community and to add 
      versionTag and versionDate to the SNMP panel.
+* 1.0.2
+   - The 1.0.2 version of this ZenPack ignores the LogMatchDevice definition and
+     modifies the __init__.py to make the LogMatch a component of the os component of
+     the Device class.  The versionTag and versionDate attributes are added directly to
+     the Device class attributes. The version is held in the device branch on github.
+   - Modified Overview display for LogMatchDevice devices to remove SNMP community and to add 
+* 1.0.3
+   - Starting from Version 1.0.1, this version converts the ZenPack to using zenpacklib, including the
+     device Overview panel.  zenpacklib.py is modified to preserve the original 1.0.1 rrd data paths.
+
 
 Screenshots
 ===========
@@ -170,7 +197,7 @@ See the screenshots directory.
 
 .. External References Below. Nothing Below This Line Should Be Rendered
 
-.. _Latest Package for Python 2.7: https://github.com/ZenossDevGuide/ZenPacks.community.LogMatch/blob/master/dist/ZenPacks.community.LogMatch-1.0.1-py2.7.egg?raw=true
+.. _Latest Package for Python 2.7: https://github.com/ZenossDevGuide/ZenPacks.community.LogMatch/blob/zenpacklib/dist/ZenPacks.community.LogMatch-1.0.3-py2.7.egg?raw=true
 
 Acknowledgements
 ================
