@@ -175,7 +175,7 @@ every 5 minutes, looking for lines containing test, where the last part of the f
 the date in yyyymmdd format.
 
 The snmpd daemon must be restarted before the change will be activated, with::
-  service snmpd restart                           or
+  service snmpd restart
   /etc/init.d/snmpd restart
 
 
