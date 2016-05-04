@@ -172,9 +172,7 @@ will need root privilege::
 
 This will monitor a file under /opt/zenoss/local/fredtest whose name is fred1.log_20160504 
 every 5 minutes, looking for lines containing test, where the last part of the filename is
-the date in yyyymmdd format.
-
-The snmpd daemon must be restarted before the change will be activated, with::
+the date in yyyymmdd format.  The snmpd daemon must be restarted before the change will be activated, with::
   service snmpd restart
   /etc/init.d/snmpd restart
 
