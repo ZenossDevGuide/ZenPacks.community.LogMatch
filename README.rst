@@ -79,6 +79,27 @@ Set the zPythonPath zProperty of the new class to be ZenPacks.community.LogMatch
 The community.snmp.LogMatchDeviceMap and community.snmp.LogMatchMap modeler plugins should also be
 assigned to this Zenoss Device Class.
 
+The SNMP agent on monitored devices must support net-SNMP with the UCD MIB.
+To configure an agent, add the following line to snmpd.conf (usually in /etc/snmp). You
+will need root privilege::
+  logmatch fred1_daily /opt/zenoss/local/fredtest/fred1.log_%Y%m%d 300 test
+
+This will monitor a file under /opt/zenoss/local/fredtest whose name is fred1.log_20160504
+every 5 minutes, looking for lines containing test, where the last part of the filename is
+the date in yyyymmdd format.  The snmpd daemon must be restarted before the change will be activated, with::
+  service snmpd restart
+  /etc/init.d/snmpd restart
+
+
+To test using snmpwalk for a device zenny1.class.example.org, using SNMP V2 with a community
+of public, try::
+  snmpwalk -v 2c -c public zenny1.class.example.org 1.3.6.1.4.1.2021.16
+
+After at least 5 minutes, a graph should be produced for each entry with the count of lines
+in the specified file containing the specified search string.
+
+
+
 
 Requirements & Dependencies
 ===========================
