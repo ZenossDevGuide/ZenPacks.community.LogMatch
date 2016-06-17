@@ -69,8 +69,13 @@ Device and component object classes
 
 where LogMatchDevice -> contains many LogMatch components
 
+The logMatchCurrentCounter attribute is new in this 1.0.4 version of the ZenPack.  It demonstrates
+the datapoint keyword for an attribute so that the component grid, which normally displays data
+gathered by a modeler, may display a datasource_datapoint value gathered by a performance
+template.  This value will show the latest value gathererd by the template.
 
 Modeler Plugins
+
 ---------------
 
 * LogMatchDeviceMap which gathers:
