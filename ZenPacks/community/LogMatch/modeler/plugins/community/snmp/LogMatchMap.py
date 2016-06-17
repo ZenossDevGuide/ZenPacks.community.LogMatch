@@ -44,6 +44,7 @@ class LogMatchMap(SnmpPlugin):
                         '.11': 'logMatchCycle',
                         '.100': 'logMatchErrorFlag',
                         '.101': 'logMatchRegExCompilation',
+                        '.7': 'logMatchCurrentCounter',
                     }
             ),
 
@@ -65,12 +66,12 @@ class LogMatchMap(SnmpPlugin):
         # tabledata contents..
         # {'logMatchTable': {'1': 
         #          {'logMatchRegExCompilation': 'Success', 'logMatchRegEx': 'test', 
-        #         'logMatchCycle': 300, 'logMatchErrorFlag': 0, 'logMatchName': 'fred1_daily', 
-        #         'logMatchFilename': '/opt/zenoss/local/fredtest/fred1.log_20151110', 
+        #         'logMatchCycle': 300,  'logMatchCurrentCounter': 6L, 'logMatchErrorFlag': 0, 
+        #         'logMatchName': 'fred1_daily', 'logMatchFilename': '/opt/zenoss/local/fredtest/fred1.log_20151110', 
         #         'logMatchIndex': 1},
         #     '2':
         #          {'logMatchRegExCompilation': 'Success', 'logMatchRegEx': 'without', 
-        #         'logMatchCycle': 180, 'logMatchErrorFlag': 0, 'logMatchName': 'fred2_daily', 
+        #         'logMatchCycle': 180, 'logMatchCurrentCounter': 15L, 'logMatchErrorFlag': 0, 'logMatchName': 'fred2_daily', 
         #         'logMatchFilename': '/opt/zenoss/local/fredtest/fred2.log_20151110', 
         #         'logMatchIndex': 1},
         # } }

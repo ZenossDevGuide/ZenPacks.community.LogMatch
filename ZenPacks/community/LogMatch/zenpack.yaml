@@ -48,12 +48,12 @@ classes:
       logMatchFilename:
         type: string
         label: LogMatch Filename
-        label_width: 400
+        label_width: 350
         order: 3.2
       logMatchRegEx:
         type: string
         label: LogMatch RegEx
-        label_width: 150
+        label_width: 130
         order: 3.3
       logMatchCycle:
         type: int
@@ -72,6 +72,13 @@ classes:
         label_width: 100
         grid_display: false
         order: 3.6
+      logMatchCurrentCounter:
+        type: int
+        label: Current Counter
+        label_width: 60
+        order: 3.7
+        datapoint: logMatchCurrentCounter_logMatchCurrentCounter
+        datapoint_default: 0
 
     relationships:
       logMatchDevice:

@@ -64,6 +64,7 @@ Device and component object classes
   - logMatchCycle = 300
   - logMatchErrorFlag = 0
   - logMatchRegExCompilation = ''
+  - logMatchCurrentCounter = 0
 
 
 where LogMatchDevice -> contains many LogMatch components
@@ -85,6 +86,8 @@ Modeler Plugins
   - logMatchCycle
   - logMatchErrorFlag
   - logMatchRegExCompilation
+  - logMatchCurrentCounter
+
 
 
 Monitoring Templates
@@ -206,6 +209,11 @@ Change History
 * 1.0.3
    - Starting from Version 1.0.1, this version converts the ZenPack to using zenpacklib, including the
      device Overview panel.  zenpacklib.py is modified to preserve the original 1.0.1 rrd data paths.
+* 1.0.4
+   - Starting from Version 1.0.3, add the logMatchCurrentCounter attribute to the LogMatch component
+     and use the datapoint keyword for this attribute so that the component grid data shows the
+     value of a datasource_datapoint value collected by a performance template.  The modeler is
+     also updated to gather the same SNMP value at model time.
 
 
 Screenshots
@@ -216,9 +224,10 @@ See the screenshots directory.
 
 .. External References Below. Nothing Below This Line Should Be Rendered
 
-.. _Latest Package for Python 2.7: https://github.com/ZenossDevGuide/ZenPacks.community.LogMatch/blob/zenpacklib/dist/ZenPacks.community.LogMatch-1.0.3-py2.7.egg?raw=true
+.. _Latest Package for Python 2.7: https://github.com/ZenossDevGuide/ZenPacks.community.LogMatch/blob/zpl_and_datapoint/dist/ZenPacks.community.LogMatch-1.0.4-py2.7.egg?raw=true
 
 Acknowledgements
 ================
 
+Thanks to Jason Stanley for pointing out the datapoint keyword for attributes when using zenpacklib.
 
