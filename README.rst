@@ -220,6 +220,7 @@ Change History
      the Device class.  The versionTag and versionDate attributes are added directly to
      the Device class attributes. The version is held in the device branch on github.
    - Modified Overview display for LogMatchDevice devices to remove SNMP community and to add 
+     versionTag and versionDate to the SNMP panel.
 * 1.0.3
    - Starting from Version 1.0.1, this version converts the ZenPack to using zenpacklib, including the
      device Overview panel.  zenpacklib.py is modified to preserve the original 1.0.1 rrd data paths.
