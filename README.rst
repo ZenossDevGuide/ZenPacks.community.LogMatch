@@ -7,7 +7,11 @@ Description
 ===========
 This ZenPack monitors logfiles using SNMP capabilities from the netSnmp UCD agent.
 
-This version of the ZenPack uses zenpacklib and is version 1.0.3.
+This version of the ZenPack uses zenpacklib and is version 1.0.4.
+Starting from Version 1.0.3 using zenpacklib, the logMatchCurrentCounter attribute was added 
+to the LogMatch component and uses the datapoint keyword for this attribute so that the 
+component grid data shows the value of a datasource_datapoint value collected by a performance template.  
+The modeler is also updated to gather the same SNMP value at model time.
 
 zenpacklib usage
 ----------------
@@ -33,6 +37,11 @@ was to create a directory hierarchy with an extra subdirectory for relationships
 To be able to preserve performance data, zenpacklib.py has been modified in the rrdPath method to restore 
 the old behaviour. If zenpacklib.py is changed or upgraded for any reason, this same change must be made 
 to preserve the data paths.
+
+Starting from Version 1.0.3, add the logMatchCurrentCounter attribute to the LogMatch component
+and use the datapoint keyword for this attribute so that the component grid data shows the
+value of a datasource_datapoint value collected by a performance template.  The modeler is
+also updated to gather the same SNMP value at model time.
 
 
 Features
