@@ -224,11 +224,13 @@ Change History
 * 1.0.3
    - Starting from Version 1.0.1, this version converts the ZenPack to using zenpacklib, including the
      device Overview panel.  zenpacklib.py is modified to preserve the original 1.0.1 rrd data paths.
+     This version is held in the zenpacklib branch on github.
 * 1.0.4
    - Starting from Version 1.0.3, add the logMatchCurrentCounter attribute to the LogMatch component
      and use the datapoint keyword for this attribute so that the component grid data shows the
      value of a datasource_datapoint value collected by a performance template.  The modeler is
      also updated to gather the same SNMP value at model time.
+     This version is held in the zpl_and_datapoint branch on github.
 
 
 Screenshots
